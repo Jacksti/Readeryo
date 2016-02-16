@@ -1,0 +1,39 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Opdracht_14._2._1
+{
+    class Program
+    {
+        static void Main(string[] args);
+        static double BerekenBTW(double bedrag)
+        {
+        const double BTW_PERCENTAGE = 0.19;
+            double btw;
+            btw = bedrag * BTW_PERCENTAGE;
+                return btw;
+
+            string invoer;
+            double bedrag_scooter, bedrag_fiets;
+            double btw_scooter, btw_fiets, btw_totaal;
+
+            Console.Write("Geef bedrag scooter: ");
+            invoer = Console.ReadLine();
+            bedrag_scooter = double.Parse(invoer);
+
+            Console.Write("Geef bedrag fiets: ");
+            invoer = Console.ReadLine();
+            bedrag_fiets = double.Parse(invoer);
+
+            btw_scooter = BerekenBTW(bedrag_scooter);
+            btw_fiets = BerekenBTW(bedrag_fiets);
+
+            btw_totaal = btw_scooter + btw_fiets;
+            Console.WriteLine("De totale btw is: " + btw_totaal);
+            Console.ReadLine();
+        }
+    }
+}
