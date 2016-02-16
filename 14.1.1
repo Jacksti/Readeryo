@@ -4,36 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Opdracht_14._2._1
+namespace Opdracht_14._2
 {
     class Program
     {
-        static void Main(string[] args);
         static double BerekenBTW(double bedrag)
-        {
+        { 
         const double BTW_PERCENTAGE = 0.19;
-            double btw;
-            btw = bedrag * BTW_PERCENTAGE;
-                return btw;
-
+        double btw;
+        btw = bedrag * BTW_PERCENTAGE;
+        return btw;
+        }
+        static void Main(string[] args)
+        {
             string invoer;
-            double bedrag_scooter, bedrag_fiets;
-            double btw_scooter, btw_fiets, btw_totaal;
-
-            Console.Write("Geef bedrag scooter: ");
+            double prijs;
+            double btw;
+            double totaal;
+            
+            Console.WriteLine("Voer prijs in: ");
             invoer = Console.ReadLine();
-            bedrag_scooter = double.Parse(invoer);
+            prijs = double.Parse(invoer);
 
-            Console.Write("Geef bedrag fiets: ");
-            invoer = Console.ReadLine();
-            bedrag_fiets = double.Parse(invoer);
-
-            btw_scooter = BerekenBTW(bedrag_scooter);
-            btw_fiets = BerekenBTW(bedrag_fiets);
-
-            btw_totaal = btw_scooter + btw_fiets;
-            Console.WriteLine("De totale btw is: " + btw_totaal);
+            btw = BerekenBTW(prijs);
+            Console.WriteLine("De BTW is: " + btw);
             Console.ReadLine();
+
+            Console.WriteLine("De prijs is: " + prijs);
+            Console.ReadLine();
+
+            totaal = prijs + btw;
+            Console.WriteLine("De totale prijs: " + totaal);
+            Console.ReadLine();
+
+           
         }
     }
 }
